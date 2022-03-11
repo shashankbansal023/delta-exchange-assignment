@@ -1,0 +1,14 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(175, 175, 196, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    width: 50%;
+    height: 50%;
+    background-color: white;
+}
