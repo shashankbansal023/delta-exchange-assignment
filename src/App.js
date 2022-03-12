@@ -8,12 +8,15 @@ function App() {
 
   let user = localStorage.getItem('user');
   const {userDetails} = useSelector(state=> state.custom)
+  if(user){
+    user = JSON.parse(user);
+  }
 
   return (
     <div className="App">
       <Router>
           <Routes>
-              <Route path="/" element={user ? (userDetails.isLogin ?  <Navigate to="/home"/>: <Navigate to="/login"/>): <Navigate to="/signup"/>}/>
+              <Route path="/" element={user ? (user.isLogin ?  <Navigate to="/home"/>: <Navigate to="/login"/>): <Navigate to="/signup"/>}/>
               <Route path="/login" element={<Login/>}/>
               <Route path="/signup" element={<Signup/>}/>
               <Route path="/home" element={<Home/>}/>

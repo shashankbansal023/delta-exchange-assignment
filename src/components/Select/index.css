@@ -1,0 +1,19 @@
+.select-box{
+    padding: 20px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.select-heading{
+    border: 3px solid black;
+    padding: 5px;
+    text-align: center;
+    width: 14vw;
+}
+
+.choices-container{
+    position: absolute;
+    border: 1px solid black;
+    z-index: 99;
+    width:14vw;
+}

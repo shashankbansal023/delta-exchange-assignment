@@ -1,0 +1,71 @@
+
+.signup-form-container{
+    display:flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#signup-form{
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+}
+
+.username-box{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.username-box input{
+    width : 20vw;
+    height:30px;
+    font-size: 15px;
+}
+
+.email-box{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.email-box input{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+}
+
+.mobile-box{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-box input{
+    width : 20vw;
+    height:30px;
+    font-size: 15px;
+}
+
+.password-box{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.password-box input{
+    width : 20vw;
+    height:30px;
+    font-size: 15px;
+}
+
+.already-have-an-account{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+}

@@ -96,3 +96,4 @@ export function signupFormValidation({signupDetails = {}}){
         isValid : Object.keys(errorObject).length ? false : true
     }
 }
+

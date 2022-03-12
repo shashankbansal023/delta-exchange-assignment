@@ -1,0 +1,52 @@
+.login-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap : 20px;
+    padding: 20px;
+    box-shadow: 5px 10px 15px #888888;
+}
+
+.email-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.email-box input{
+    margin-left: 10px;
+    width : 20vw;
+    height: 30px;
+    font-size: 15px;
+}
+
+.password-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.password-box input{
+    margin-left: 10px;
+    width: 20vw;
+    height: 30px;
+    font-size: 15px;
+}
+
+.form-container button{
+    align-self: center;
+}
+
+.new-user{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+}

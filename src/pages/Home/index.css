@@ -1,0 +1,15 @@
+.heading{
+    display:flex;
+    justify-content: start;
+    align-items: center;
+    height: 10vh;
+    padding: 1vw;
+    border-bottom : 1px solid black;
+    margin : 1vw;
+    gap: 10px;
+}
+
+.title{
+    font-size: 3vw;
+}
+

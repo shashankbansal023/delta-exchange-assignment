@@ -2,12 +2,12 @@ import React from 'react'
 import {useSelector , useDispatch} from 'react-redux'
 import Checkbox from '../Checkbox'
 import Button from '../Button'
+import './index.css'
 
 const Table=({rowData})=>{
 
     const columns = ["name" , "company" , "status" ,"notes"];
     const  headers = ["Name" , "Company" ,"Status" , "Notes"];
-    // const {rows} = useSelector(state=> state.custom);
     const dispatch = useDispatch();
 
     function deleteItem(index){
@@ -18,10 +18,11 @@ const Table=({rowData})=>{
     }
 
     return (
+        <div className='table-container'>
         <table>
             <thead>
                 <tr>
-                <Checkbox/>
+                    <Checkbox/>
                     {
                         headers.map((header,index)=>{
                             return <th key={index}>{header}</th>
@@ -42,7 +43,15 @@ const Table=({rowData})=>{
                                         return <td key={index}>{row[col]}</td>
                                     })
                                 }
-                                <Button onClick={()=>deleteItem(index)}>Delete</Button>
+                                <Button style={{
+                                    padding: '15px 40px',
+                                    color: 'white',
+                                    backgroundColor:'black',
+                                    border:'none',
+                                    fontSize:'15px',
+                                    cursor:'pointer',
+                                    borderRadius:'5px'
+                                }} onClick={()=>deleteItem(index)}>Delete</Button>
                             </tr>
                             </>
                         )
@@ -51,6 +60,7 @@ const Table=({rowData})=>{
             </tbody>
             
         </table>
+        </div>
     )
 }
 

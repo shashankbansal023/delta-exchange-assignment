@@ -5,6 +5,7 @@ import Table from '../../components/Table'
 import Select from '../../components/Select'
 import {useSelector} from 'react-redux'
 import Navbar from '../../components/Navbar'
+import './index.css'
 
 function Home(){
 
@@ -24,6 +25,8 @@ function Home(){
         }
     }
 
+
+    const {userDetails} = useSelector(state=> state.custom); 
     const {rows} = useSelector(state=> state.custom); 
     const [checkedBoxes , setCheckedBoxes] = useState(allCheckedBoxes);
 
@@ -66,19 +69,27 @@ function Home(){
     const filteredRowsData = filteredRows(rows);
 
     return (
-        <>
+        <div className="home-container">
         <Navbar/>
+        <div className="heading">{userDetails && userDetails.username}</div>
         <div>
             <div className="heading">
-                <div>Team Members</div>
-                <Button onClick={toggleModal}>Add Team Members</Button>    
-            </div>
-
+                <div className="title">Team Members</div>
+                <Button style={{
+                    color : 'white',
+                    fontSize: '1.5vw',
+                    backgroundColor: '#114585',
+                    borderRadius: '50px',
+                    cursor:'pointer',
+                    border:'1px solid black',
+                    padding:'1vw'
+                }} onClick={toggleModal}>Add Team Members</Button>    
+            </div>  
             <Modal 
                 open={showModal} 
                 onClose={toggleModal} 
             /> 
-            <div>
+            <div className="select-container">
                 <Select 
                 heading="company"
                 choices= {companies}
@@ -96,7 +107,7 @@ function Home(){
 
             <Table rowData={filteredRowsData}></Table>
         </div>
-        </>
+        </div>
     )
 }
 

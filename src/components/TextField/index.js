@@ -11,15 +11,16 @@ const TextField=({
 
     return (
         <>
-        <label>{label}</label>
-        <input
-          placeholder={placeholder}
-          name={name}
-          value={value}
-          onChange={onChange}
-        />
-        {errors && <small style={{color: 'red'}}>{errors}</small>}
+            <label style={{fontSize:'20px'}}>{label}</label>
+            <input
+            placeholder={placeholder}
+            name={name}
+            value={value}
+            onChange={onChange}
+            />
+            {errors && <small style={{color: 'red',fontSize:'15px'}}>{errors}</small>}
         </>
+        
     )
 }
 

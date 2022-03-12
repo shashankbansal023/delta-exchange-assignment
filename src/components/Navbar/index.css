@@ -1,0 +1,22 @@
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+    align-items: center;
+    padding: 10px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5vw;
+    gap: 20px;
+}
+
+.navbar-heading{
+    font-weight:600;
+    font-size: 2vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor:pointer;
+}

@@ -4,6 +4,9 @@ import Button from '../../components/Button'
 import { signupFormValidation } from '../../helpers'
 import {useNavigate} from 'react-router-dom'
 import { useDispatch } from 'react-redux'
+import './index.css'
+import {Link} from 'react-router-dom'
+import Navbar from '../../components/Navbar'
 
 const Signup=()=>{
 
@@ -24,7 +27,7 @@ const Signup=()=>{
             setSignupErrors(errors);
         }
         else{
-            localStorage.setItem('user' , JSON.stringify(signupDetails));
+            localStorage.setItem('user' , {...JSON.stringify(signupDetails) , isLogin:true});
             dispatch({
                 type: "addUser",
                 payload : {...signupDetails, isLogin : true}
@@ -34,41 +37,83 @@ const Signup=()=>{
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <TextField
-            name="username"
-            value={signupDetails.username || ''}
-            label="Username"
-            placeholder="Enter your username"
-            onChange={handleChange}
-            errors = {signupErrors && signupErrors.username}
-            />
-            <TextField 
-            name="email"
-            placeholder="Enter your email"
-            value={signupDetails.email || ''}
-            label="Email"
-            onChange={handleChange}
-            errors = {signupErrors && signupErrors.email}
-            />
-             <TextField 
-            name="password"
-            placeholder="Enter your password"
-            value={signupDetails.password || ''}
-            label="Password"
-            onChange={handleChange}
-            errors = {signupErrors && signupErrors.password}
-            />
-            <TextField 
-            name="mobile"
-            placeholder="Enter your password"
-            value={signupDetails.mobile || ''}
-            label="Mobile"
-            onChange={handleChange}
-            errors = {signupErrors && signupErrors.mobile}
-            />
-            <Button type="submit">Sign Up</Button>
+        
+        <>
+            <Navbar/>
+        
+        <div className="signup-form-container">
+        <form id="signup-form" onSubmit={handleSubmit}>
+            <div className="form-container">
+                <div className="username-box">
+                    <TextField
+                    name="username"
+                    value={signupDetails.username || ''}
+                    label="Username"
+                    placeholder="Enter your username"
+                    onChange={handleChange}
+                    errors = {signupErrors && signupErrors.username}
+                    />
+                </div>
+                <div className="email-box">
+                    <TextField 
+                    name="email"
+                    placeholder="Enter your email"
+                    value={signupDetails.email || ''}
+                    label="Email"
+                    onChange={handleChange}
+                    errors = {signupErrors && signupErrors.email}
+                    />
+                </div>
+                <div className='password-box'>
+                    <TextField 
+                    name="password"
+                    placeholder="Enter your password"
+                    value={signupDetails.password || ''}
+                    label="Password"
+                    onChange={handleChange}
+                    errors = {signupErrors && signupErrors.password}
+                    />
+                </div>
+                <div className="mobile-box">
+                    <TextField 
+                    name="mobile"
+                    placeholder="Enter your mobile"
+                    value={signupDetails.mobile || ''}
+                    label="Mobile"
+                    onChange={handleChange}
+                    errors = {signupErrors && signupErrors.mobile}
+                    />
+                </div>
+                <Button style={{color:"white" ,
+                fontSize:'20px',
+                padding:'15px',
+                backgroundColor:'#0e3263',
+                border:'1px solid black',
+                width:'10vw',
+                borderRadius:'10px',
+                cursor:'pointer'
+                }}type="submit">Sign Up</Button>
+
+                <div className="already-have-an-account">
+                    <span style={{fontSize: '20px'}}>If you have an account? </span>
+                    <Link to="/login">
+                        <Button style={{
+                        width: '10vw',
+                        color:'white',
+                        backgroundColor:'#0e3263',
+                        fontSize: '15px',
+                        border: '1px solid black',
+                        borderRadius:'5px',
+                        padding:'10px',
+                        cursor:'pointer'
+                    }}  >Login</Button>
+                    </Link>
+                 </div>
+            </div>
         </form>
+        </div>
+        </>
     )
 }
 export default Signup
+

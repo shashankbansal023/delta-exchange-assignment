@@ -45,10 +45,10 @@ const Modal = ({ open="", onClose = () => {} }) => {
       <>
           {
               open && (
-                <div className="container" onClick={onClose}>  
+                <div className="modal-container" onClick={onClose}>  
                         <form onSubmit={(e)=>handleSubmit(e)}>
-                           <div onClick={(e) => e.stopPropagation()}>
-                           <div>Add Team Members</div>
+                           <div className="modal-box" onClick={(e) => e.stopPropagation()}>
+                           <div className="modal-heading">Add Team Members</div>
                             <TextField
                             placeholder="Enter the name"
                             onChange={handleChange}
@@ -84,8 +84,30 @@ const Modal = ({ open="", onClose = () => {} }) => {
                             value={rowDetail.notes || "" }
                             errors={userErrors && userErrors.notes}
                             />
-                            <Button onClick={onClose}>Cancel</Button>
-                            <Button type="submit">Save</Button>
+                            <Button
+                            style={{
+                              color: 'black',
+                              width :'40%',
+                              fontSize:'1.5vw',
+                              padding: '10px',
+                              backgroundColor:'white',
+                              border:'1px solid black',
+                              borderRadius:'30px',
+                              textAlign:'center',
+                              cursor:'pointer'
+                            }} onClick={onClose}>Cancel</Button>
+                            <Button 
+                            style={{
+                              color: 'black',
+                              width :'40%',
+                              fontSize:'1.5vw',
+                              padding: '10px',
+                              backgroundColor:'white',
+                              border:'1px solid black',
+                              borderRadius:'30px',
+                              textAlign:'center',
+                              cursor:'pointer'
+                            }}type="submit">Save</Button>
                            </div>
                         </form>
             </div>
